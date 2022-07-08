@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Project">
+  <ClassDiagramComponents>
+    <Class name="GUI" package="View" visibility="public" xPosition="3119.0" yPosition="308.0">
+      <Fields>
+        <Field name="jPanel" type="JPanel" visibility="private"/>
+        <Field name="startGame" type="JButton" visibility="private"/>
+        <Field name="image" type="Image" visibility="private"/>
+        <Field name="p1Field" type="JDesktopPane" visibility="private"/>
+        <Field name="board" type="JDesktopPane" visibility="private"/>
+        <Field name="nextPlayer" type="JButton" visibility="private"/>
+        <Field name="drawTiles" type="JButton" visibility="private"/>
+        <Field name="assistant" type="JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Menu" package="View" visibility="public" xPosition="3125.0" yPosition="197.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Controller" package="Controller" visibility="public" xPosition="1777.0" yPosition="659.0">
+      <Fields>
+        <Field name="P1" type="Player" visibility="private"/>
+        <Field name="board" type="Board" visibility="private"/>
+        <Field name="bag" type="Collection" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Project" package="main" visibility="public" xPosition="3119.0" yPosition="71.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StatueTile" package="Model.Tiles" visibility="public" isAbstract="true" xPosition="1256.0" yPosition="920.0">
+      <Fields>
+        <Field name="type" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="state"/>
+          <Argument type="String" name="type"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getType" returnType="String" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="Tile" package="Model.Tiles" visibility="public" isAbstract="true" xPosition="320.0" yPosition="357.0">
+      <Fields>
+        <Field name="category" type="String" visibility="protected"/>
+        <Field name="State" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="category"/>
+          <Argument type="int" name="state"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getState" returnType="int" visibility="public"/>
+        <Method name="getCategory" returnType="String" visibility="public"/>
+        <Method name="setState" returnType="void" visibility="public">
+          <Argument type="int" name="state"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SphinxTile" package="Model.Tiles" visibility="public" xPosition="1333.0" yPosition="1175.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="state"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="FindingTile" package="Model.Tiles" visibility="public" isAbstract="true" xPosition="394.0" yPosition="635.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="category"/>
+          <Argument type="int" name="state"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="MosaicTile" package="Model.Tiles" visibility="public" xPosition="591.0" yPosition="920.0">
+      <Fields>
+        <Field name="color" type="Colors" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="state"/>
+          <Argument type="Colors" name="color"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getColor" returnType="Colors" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SkeletonTile" package="Model.Tiles" visibility="public" xPosition="30.0" yPosition="920.0">
+      <Fields>
+        <Field name="SkeletonSize" type="String" visibility="private"/>
+        <Field name="SkeletonBody" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="skeletonSize"/>
+          <Argument type="String" name="skeletonBody"/>
+          <Argument type="int" name="state"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="CaryatidTile" package="Model.Tiles" visibility="public" xPosition="1534.0" yPosition="1175.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="state"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="AmphoraTile" package="Model.Tiles" visibility="public" xPosition="920.0" yPosition="920.0">
+      <Fields>
+        <Field name="color" type="Colors" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Colors" name="color"/>
+          <Argument type="int" name="state"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getColor" returnType="Colors" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="LandSlideTile" package="Model.Tiles" visibility="public" xPosition="30.0" yPosition="626.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="State"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Player" package="Model.Player" visibility="public" xPosition="1945.0" yPosition="116.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="myTiles" type="Collection" visibility="private"/>
+        <Field name="myColor" type="Colors" visibility="private"/>
+        <Field name="endTurn" type="boolean" visibility="private"/>
+        <Field name="Professor" type="Card" visibility="private"/>
+        <Field name="Digger" type="Card" visibility="private"/>
+        <Field name="Assistant" type="Card" visibility="private"/>
+        <Field name="Archaeologist" type="Card" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="Colors" name="playerColor"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="package"/>
+        <Method name="getColor" returnType="Colors" visibility="package"/>
+        <Method name="getProfessor" returnType="Card" visibility="package"/>
+        <Method name="getDigger" returnType="Card" visibility="package"/>
+        <Method name="getAssistant" returnType="Card" visibility="package"/>
+        <Method name="getArchaeologist" returnType="Card" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="Board" package="Model.Board" visibility="public" xPosition="1405.0" yPosition="167.0">
+      <Fields>
+        <Field name="amphorae" type="Collection" visibility="private"/>
+        <Field name="landSlides" type="Collection" visibility="private"/>
+        <Field name="mosaics" type="Collection" visibility="private"/>
+        <Field name="skeletons" type="Collection" visibility="private"/>
+        <Field name="statues" type="Collection" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addAmphora" returnType="void" visibility="public">
+          <Argument type="AmphoraTile" name="i"/>
+        </Method>
+        <Method name="addLandSlide" returnType="void" visibility="public">
+          <Argument type="LandSlideTile" name="i"/>
+        </Method>
+        <Method name="addMosaic" returnType="void" visibility="public">
+          <Argument type="MosaicTile" name="i"/>
+        </Method>
+        <Method name="addSkeleton" returnType="void" visibility="public">
+          <Argument type="SkeletonTile" name="i"/>
+        </Method>
+        <Method name="addStatue" returnType="void" visibility="public">
+          <Argument type="StatueTile" name="i"/>
+        </Method>
+        <Method name="removeTile" returnType="void" visibility="public">
+          <Argument type="Object" name="i"/>
+        </Method>
+        <Method name="getTiles" returnType="int" visibility="public">
+          <Argument type="Object" name="i"/>
+        </Method>
+        <Method name="StartingBoard" returnType="void" visibility="public"/>
+        <Method name="endGame" returnType="boolean" visibility="public"/>
+        <Method name="nextPlayer" returnType="Colors" visibility="public"/>
+        <Method name="hasPlayed" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Assistant" package="Model.Cards" visibility="public" xPosition="1881.0" yPosition="1121.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Colors" name="cardHolder"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Card" package="Model.Cards" visibility="public" xPosition="2380.0" yPosition="681.0">
+      <Fields>
+        <Field name="used" type="boolean" visibility="private"/>
+        <Field name="attribute" type="String" visibility="protected"/>
+        <Field name="cardHolder" type="Colors" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Colors" name="cardHolder"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="isAvailable" returnType="boolean" visibility="public"/>
+        <Method name="setUsed" returnType="void" visibility="public"/>
+        <Method name="triggerAbility" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Digger" package="Model.Cards" visibility="public" xPosition="2172.0" yPosition="1121.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Colors" name="cardHolder"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Archaeologist" package="Model.Cards" visibility="public" xPosition="2478.0" yPosition="1121.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Colors" name="cardHolder"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Professor" package="Model.Cards" visibility="public" xPosition="2823.0" yPosition="1121.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Colors" name="cardHolder"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Collection" package="Model.Collection" visibility="public" xPosition="681.0" yPosition="76.0">
+      <Fields>
+        <Field name="tiles" type="ArrayList&lt;Tile&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initializeTiles" returnType="void" visibility="public"/>
+        <Method name="addTile" returnType="void" visibility="public">
+          <Argument type="Tile" name="i"/>
+        </Method>
+        <Method name="removeTile" returnType="void" visibility="public">
+          <Argument type="Tile" name="i"/>
+        </Method>
+        <Method name="getSize" returnType="int" visibility="public"/>
+        <Method name="getTileString" returnType="String" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="getTile" returnType="Tile" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="isEmpty" returnType="boolean" visibility="package"/>
+      </Methods>
+    </Class>
+    <Enum name="Colors" package="Model.Tiles" visibility="public" xPosition="2536.0" yPosition="76.0">
+      <Literals>
+        <Literal name="BLUE"/>
+        <Literal name="BROWN"/>
+        <Literal name="GREEN"/>
+        <Literal name="RED"/>
+        <Literal name="YELLOW"/>
+        <Literal name="PURPLE"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Model.Board.Board" target="Model.Tiles.Colors" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Player.Player" target="Model.Tiles.Colors" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="P1" source="Controller.Controller" target="Model.Player.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.Tiles.StatueTile" target="Model.Tiles.FindingTile"/>
+    <IsRelation name="is" source="Model.Cards.Digger" target="Model.Cards.Card"/>
+    <HasRelation name="Archaeologist" source="Model.Player.Player" target="Model.Cards.Card" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Digger" source="Model.Player.Player" target="Model.Cards.Card" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Board.Board" target="Model.Tiles.AmphoraTile" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="statues" source="Model.Board.Board" target="Model.Collection.Collection" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Collection.Collection" target="Model.Tiles.Tile" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.Tiles.CaryatidTile" target="Model.Tiles.StatueTile"/>
+    <IsRelation name="is" source="Model.Tiles.AmphoraTile" target="Model.Tiles.FindingTile"/>
+    <IsRelation name="is" source="Model.Cards.Assistant" target="Model.Cards.Card"/>
+    <IsRelation name="is" source="Model.Tiles.FindingTile" target="Model.Tiles.Tile"/>
+    <HasRelation name="color" source="Model.Tiles.MosaicTile" target="Model.Tiles.Colors" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bag" source="Controller.Controller" target="Model.Collection.Collection" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.Cards.Archaeologist" target="Model.Cards.Card"/>
+    <UseRelation source="Model.Tiles.MosaicTile" target="Model.Tiles.Colors" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.Tiles.SkeletonTile" target="Model.Tiles.FindingTile"/>
+    <HasRelation name="cardHolder" source="Model.Cards.Card" target="Model.Tiles.Colors" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Board.Board" target="Model.Tiles.Tile" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Board.Board" target="Model.Tiles.SkeletonTile" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Board.Board" target="Model.Tiles.LandSlideTile" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Professor" source="Model.Player.Player" target="Model.Cards.Card" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myTiles" source="Model.Player.Player" target="Model.Collection.Collection" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.Tiles.SphinxTile" target="Model.Tiles.StatueTile"/>
+    <HasRelation name="color" source="Model.Tiles.AmphoraTile" target="Model.Tiles.Colors" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="amphorae" source="Model.Board.Board" target="Model.Collection.Collection" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Assistant" source="Model.Player.Player" target="Model.Cards.Card" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mosaics" source="Model.Board.Board" target="Model.Collection.Collection" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.Tiles.MosaicTile" target="Model.Tiles.FindingTile"/>
+    <UseRelation source="Model.Player.Player" target="Model.Cards.Card" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Board.Board" target="Model.Tiles.MosaicTile" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="board" source="Controller.Controller" target="Model.Board.Board" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="landSlides" source="Model.Board.Board" target="Model.Collection.Collection" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tiles" source="Model.Collection.Collection" target="Model.Tiles.Tile" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Tile&gt;"/>
+    <UseRelation source="Model.Tiles.AmphoraTile" target="Model.Tiles.Colors" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.Cards.Professor" target="Model.Cards.Card"/>
+    <HasRelation name="myColor" source="Model.Player.Player" target="Model.Tiles.Colors" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.Tiles.LandSlideTile" target="Model.Tiles.Tile"/>
+    <HasRelation name="skeletons" source="Model.Board.Board" target="Model.Collection.Collection" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
