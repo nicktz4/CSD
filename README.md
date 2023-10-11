@@ -1,4 +1,3 @@
 # CSD 
 
-Μερικές απο τις ασκήσεις που έχουμε κάνει
-στο τμήμα Επιστήμης Υπολογιστών Πανεπιστημίου Κρήτης
+Some exercises from Computer Science Department , University of Crete
